@@ -8,20 +8,20 @@ def get_balance(accounts)
 end
 
 def do_deposit(accounts, amount)
-    accounts['balance'] = accounts['balance'] + amount
+    accounts['balance'] += amount
     return accounts
 end
 
 def do_withdraw(accounts, amount)
-    accounts['balance'] = accounts['balance'] - amount
+    accounts['balance'] -= amount
     return accounts
 end   
 
 def do_transfer(debtor, creditor, amount)    
     accounts = {}
     if debtor['balance'] >= amount
-        creditor['balance'] = creditor['balance'] + amount
-        debtor['balance'] = debtor['balance'] - amount
+        creditor['balance'] += amount
+        debtor['balance'] -= amount
     end
     accounts['debtor'] = debtor
     accounts['creditor'] = creditor
